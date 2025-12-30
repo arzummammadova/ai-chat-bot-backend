@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:8081"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
@@ -38,7 +38,7 @@ function cleanResponse(text) {
   
   bannedPhrases.forEach(phrase => {
     if (phrase.test(cleaned)) {
-      return `Mən Akul ${process.env.NAME} saytının Chatbotuyam.`;
+      return ` ${process.env.NAME} .`;
     }
   });
 
